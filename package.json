@@ -1,0 +1,40 @@
+{
+    "name": "my-calc",
+    "displayName": "my-calc",
+    "description": "Simple inline editor calculator",
+    "version": "0.0.1",
+    "publisher": "jigarmistry",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.sayHello",
+        "onCommand:extension.doCalc"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.sayHello",
+            "title": "Hello World"
+        }, {
+            "command": "extension.doCalc",
+            "title": "My Calculator"
+        }],
+        "keybindings": [{
+            "command": "extension.doCalc",
+            "key": "Ctrl+Alt+c"
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    }
+}
